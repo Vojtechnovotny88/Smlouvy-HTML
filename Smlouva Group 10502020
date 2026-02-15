@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smlouva o dílo - T.C.S. Group s.r.o.</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background: white;
+            color: #000;
+        }
+        
+        .logo {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            width: 150px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 40px 0 30px 0;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+        }
+        
+        .header-section {
+            margin-bottom: 30px;
+        }
+        
+        .party-info {
+            margin-bottom: 15px;
+        }
+        
+        .party-label {
+            font-weight: normal;
+            margin-top: 15px;
+        }
+        
+        .article {
+            margin: 25px 0;
+        }
+        
+        .article-number {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+        
+        .article-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .paragraph {
+            margin: 10px 0;
+            text-align: justify;
+        }
+        
+        .indent {
+            margin-left: 40px;
+        }
+        
+        .sub-indent {
+            margin-left: 60px;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .signature-block {
+            width: 45%;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #000;
+            margin-top: 60px;
+            padding-top: 5px;
+        }
+        
+        .footer-note {
+            margin-top: 30px;
+            font-size: 10pt;
+        }
+        
+        /* Zvýraznění vyplňovacích polí - pro editaci */
+        .fillable {
+            background-color: #fff3cd;
+            border-bottom: 1px dotted #000;
+            min-width: 100px;
+            display: inline-block;
+            padding: 0 5px;
+        }
+        
+        /* Pro tisk - odstraní pozadí vyplňovacích polí */
+        @media print {
+            .fillable {
+                background-color: transparent;
+                border-bottom: none;
+            }
+            
+            body {
+                padding: 0;
+            }
+        }
+        
+        .appendix-list {
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <!-- Pro logo v repozitáři: -->
+        <img src="logo.png" alt="T.C.S. Group logo">
+        
+        <!-- Nebo pro logo z webu: -->
+        <!-- <img src="https://www.tcs-group.cz/path/to/logo.png" alt="T.C.S. Group logo"> -->
+    </div>
+
+    <h1>SMLOUVA O DÍLO</h1>
+
+    <div class="header-section">
+        <div class="party-info">
+            jméno, příjmení/název: <span class="fillable">{{jmeno_prijmeni_nazev}}</span><br>
+            datum narození/IČ : <span class="fillable">{{datum_narozeni_ic}}</span><br>
+            bydliště/sídlo: <span class="fillable">{{bydliste_sidlo}}</span><br>
+            Email: <span class="fillable">{{email_objednatel}}</span><br>
+            Tel: <span class="fillable">{{telefon_objednatel}}</span><br>
+        </div>
+        
+        <p class="party-label">(dále jen jako „<strong>Objednatel</strong>" na straně jedné) a</p>
+        
+        <div class="party-info">
+            název: <strong>T.C.S. Group s.r.o.</strong><br>
+            IČ: <strong>29382106</strong><br>
+            sídlo: <strong>Ostravská 438, 735 41 Petřvald</strong><br>
+            č. ú.: <strong>2700341438/2010</strong><br>
+            Email: <strong>info@tcs-group.cz</strong><br>
+        </div>
+        
+        <p class="party-label">(dále jen „<strong>Zhotovitel</strong>" na straně druhé)</p>
+        
+        <p style="margin-top: 20px;">uzavírají níže uvedeného dne, měsíce a roku podle ust. § 2586 a násl. zákona č. 89/2012 Sb., občanský zákoník, ve znění pozdějších předpisů, tuto</p>
+        
+        <h2>smlouvu o dílo (dále jen „Smlouva")</h2>
+    </div>
+
+    <div class="article">
+        <div class="article-number">I.</div>
+        <div class="article-title">Předmět smlouvy</div>
+        
+        <p class="paragraph">1. Zhotovitel se touto Smlouvou zavazuje provést na svůj náklad a nebezpečí pro objednatele za podmínek níže uvedených, dílo: <span class="fillable">{{predmet_dila}}</span> (dále jen "Dílo") spočívající v dodání, montáži a zprovoznění Díla a objednatel se zavazuje Dílo převzít a zaplatit za něj Zhotoviteli cenu, která je sjednána v čl. II této smlouvy.</p>
+        
+        <p class="paragraph">2. Specifikace díla je uvedena v listině Bližší specifikace díla, která je nedílnou součástí této Smlouvy jako příloha č. 1.</p>
+        
+        <p class="paragraph">3. Informace o tom, zda je součástí díla podání žádosti o dotace, o jaký konkrétní dotační program se jedná a v jakém rozsahu Zhotovitel zajišťuje související služby, je specifikována v příloze „Bližší specifikace díla", která je nedílnou součástí této Smlouvy podle odstavce 2 tohoto článku. V případě, že dotační program není v příloze specifikován nebo příloha neobsahuje informace o dotačním programu, má se za to, že vyřízení dotace není součástí díla dle této smlouvy.</p>
+        
+        <p class="paragraph">4. Zhotovitel se zavazuje provést Dílo v souladu s touto smlouvou, minimálně v kvalitě odpovídající obecně platným předpisům, které souvisejí s předmětem plnění. Zhotovitel prohlašuje, že se v plném rozsahu seznámil s rozsahem a povahou díla, že mu jsou známy veškeré technické, kvalitativní a jiné podmínky nezbytné k realizaci díla, a že k provedení této stavby má potřebné oprávnění k podnikání a že vedení stavby zajistí osobami odborně způsobilými. Zhotovitel si vyhrazuje právo, v případě potřeby a po dohodě s objednatelem, nahradit komponentu díla za komponentu stejné nebo vyšší kvality. Jakákoli taková změna bude provedena bez dodatečného nákladu pro objednatele a nebude mít negativní vliv na celkovou kvalitu, cenu nebo funkci díla.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">II.</div>
+        <div class="article-title">Cena Díla a způsob úhrady</div>
+        
+        <p class="paragraph">1. Smluvní strany se dohodly, že celková cena díla bude činit částku <span class="fillable">{{celkova_cena}}</span> Kč včetně DPH.</p>
+        
+        <p class="paragraph">2. V případě, že je součástí díla i vyřízení dotace z programu „Oprav dům po babičce", „Nová zelená úsporám Light" nebo jiného dotačního programu, bude se výše dotace řídit podmínkami a pravidly aktuálními v době schválení žádosti o dotaci ze strany poskytovatele příslušného programu. Objednatel bere na vědomí, že mezi podpisem smlouvy a podáním žádosti o dotaci mohou nastat změny v dotačních podmínkách, které mohou ovlivnit konečnou výši dotace. Tyto změny nemůže Zhotovitel ovlivnit a nenese za ně odpovědnost. Pokud si zadavatel vyřizuje dotaci samostatně nebo realizace díla probíhá bez využití dotačního programu, toto ustanovení se neaplikuje.</p>
+        
+        <p class="paragraph">3. Smluvní strany se dohodly, že Objednatel uhradí cenu díla následovně:</p>
+        
+        <p class="paragraph indent">a) <span class="fillable">{{procento_1}}</span> % ceny díla uhradí Objednatel na základě první zálohové faktury Zhotovitele, která bude vystavena po podpisu smlouvy o dílo a je splatná do 7 dnů ode dne jejího vystavení.</p>
+        
+        <p class="paragraph indent">b) <span class="fillable">{{procento_2}}</span> % ceny díla uhradí Objednatel na základě druhé zálohové faktury Zhotovitele, která bude vystavena před započetím prací a je splatná do 30 dnů ode dne jejího vystavení.</p>
+        
+        <p class="paragraph indent">b1) V případě, že je předmětem díla realizace fotovoltaické elektrárny, bude druhá zálohová faktura vystavena v návaznosti na naplánování závozu materiálu. Smluvní strany se dohodly, že tato faktura musí být uhrazena nejpozději v den závozu materiálu na místo realizace, a to bez ohledu na standardní splatnost této faktury. Neuhrazení této faktury nejpozději v den závozu materiálu je důvodem pro odložení závozu materiálu ze strany Zhotovitele, a to až do okamžiku úplné úhrady této faktury Objednatelem, přičemž Objednateli mohou být účtovány náklady spojené s tímto zrušením závozu materiálu.</p>
+        
+        <p class="paragraph indent">c) <span class="fillable">{{procento_3}}</span> % ceny díla uhradí Objednatel na základě třetí zálohové faktury Zhotovitele, která bude vystavena po započetí prací a je splatná do 7 dnů ode dne jejího vystavení.</p>
+        
+        <p class="paragraph indent">d) zbývajících <span class="fillable">{{procento_4}}</span> % ceny díla se Objednatel zavazuje uhradit po dokončení díla a jeho předání Objednateli na základě konečné faktury.</p>
+        
+        <p class="paragraph">4. V případě, že je součástí díla vyřízení dotace dle přílohy „Bližší specifikace díla" a Objednatel dotaci do splatnosti druhé zálohové faktury ještě neobdrží, Zhotovitel nebude bezdůvodně trvat na úhradě této faktury v době, kdy dotace ještě nebyla poskytnuta. Pokud vyřízení dotace není součástí díla nebo se dílo realizuje bez využití dotačního programu, platí standardní splatnost faktury. V případě, že je součástí díla vyřízení dotace, se Objednatel zavazuje poskytnout Zhotoviteli informace o průběhu žádosti o dotaci a veškerou potřebnou dokumentaci k zajištění jejího čerpání.</p>
+        
+        <p class="paragraph">5. Cena díla bude hrazena Objednatelem na bankovní účet Zhotovitele uvedený v záhlaví smlouvy, a to na základě daňových dokladů - faktur vystavených Zhotovitelem a zaslaných Objednateli na email nebo na adresu uvedené v záhlaví. V případě, že dojde ke změně bankovního účtu Zhotovitele, Zhotovitel oznámí tuto skutečnost Objednateli a nový bankovní účet bude uveden ve faktuře, případně bude vystavena opravná faktura.</p>
+        
+        <p class="paragraph">6. Celková cena za zhotovení díla dle této smlouvy se dohodou smluvních stran stanovuje jako cena smluvní, pevná po celou dobu zhotovení díla a je dána výše uvedenou cenovou nabídkou Zhotovitele. Celková cena obsahuje veškeré náklady, včetně ostatních prací souvisejících s provedením díla, vyjma neočekávaných nákladů a víceprací, které budou mezi stranami v průběhu provádění Díla dohodnuty. V případě, že předmětem díla je zateplení fasády, je část této ceny stanovena jako součin jednotkové ceny za 1 m² a předpokládané výměry uvedené v příloze č. 1. Po provedení přesného zaměření po postavení lešení může být cena díla upravena podle skutečně změřené výměry při zachování sjednané jednotkové ceny uvedené v příloze č. 1. Objednatel bere na vědomí, že z tohoto důvodu se může konečná cena od ceny uvedené v čl. II odst. 1 této smlouvy lišit.</p>
+        
+        <p class="paragraph">7. Smluvní strany se dohodly, že zjistí-li Zhotovitel v průběhu provádění díla potřebu víceprací či dodatečného materiálu nezbytných pro dokončení díla, oznámí tuto skutečnost bez zbytečného odkladu objednateli s uvedením důvodů a předpokládaných nákladů. Tyto vícepráce či dodatečný materiál budou realizovány pouze na základě písemného souhlasu objednatele. Cena za vícepráce bude stanovena dle ceníku Zhotovitele platného ke dni oznámení potřeby víceprací, který je dostupný na webových stránkách Zhotovitele; není-li konkrétní položka v ceníku uvedena, bude cena určena jako cena obvyklá v místě a čase provádění víceprací. Celková cena víceprací nesmí překročit 10 % z celkové ceny díla sjednané v této smlouvě, pokud se smluvní strany nedohodnou jinak.</p>
+        
+        <p class="paragraph">8. Cena za administrativní a projektové činnosti, nebo činnosti související s přípravou podkladů pro podání dotace a plánováním realizace činí 20.000,- Kč a je součástí celkové ceny díla. Na tuto částku vzniká Zhotoviteli nárok v případě odstoupení od smlouvy ze strany Objednatele nebo při ukončení smlouvy dohodou na pokyn Objednatele. Tato částka je paušální a vztahuje se na přípravné práce předcházející návozu materiálu na místo realizace nebo zahájení montáže. Pokud již došlo k návozu materiálu nebo započetí montáže, budou k uvedené částce připočteny skutečně vynaložené náklady na materiál a provedené práce. V případě, že montáž byla již částečně realizována a v důsledku odstoupení od smlouvy je nutná její demontáž, nebude místo realizace uvedeno do původního stavu, pouze bude odklizeno a zabezpečeno tak, aby nevzniklo poškození nebo nebezpečí. Zhotovitel je oprávněn tuto úhradu započíst vůči již zaplaceným částkám. Tato částka však Zhotoviteli nenáleží v případě, že Objednatel odstoupí od smlouvy ve lhůtě 14 dnů od jejího uzavření dle čl. VII. odst. 3.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">III.</div>
+        <div class="article-title">Termín a místo zhotovení díla</div>
+        
+        <p class="paragraph">1. Zhotovitel se zavazuje provést Dílo v co nejkratším možném termínu po dodání veškerého potřebného materiálu do místa zhotovení Díla.</p>
+        
+        <p class="paragraph">2. Zhotovitel započne s pracemi dle této Smlouvy do <span class="fillable">{{termin_zahajeni}}</span> dní od připsání plateb v souhrnné výši minimálně 60% celkové ceny díla na bankovní účet Zhotovitele. Zhotovitel má právo tuto lhůtu prodloužit v případě vzniku nepředvídatelných okolností, které nemůže ovlivnit, jako jsou například nevhodné povětrnostní podmínky, výpadek dodávky materiálu nebo jiné výjimečné situace, které by mohly ovlivnit začátek nebo průběh montáže díla. O této skutečnosti je Zhotovitel povinen informovat Objednatele bez zbytečného odkladu.</p>
+        
+        <p class="paragraph">3. Podmínkou zhotovení díla je včasné a řádné zaplacení částí ceny díla v souladu s čl. II odst. 3 této Smlouvy.</p>
+        
+        <p class="paragraph">4. Dílo se považuje za dokončené, je-li bez vad a nedodělků, které by bránily provozování Díla a je-li předvedena jeho způsobilost sloužit svému účelu.</p>
+        
+        <p class="paragraph">5. Místem zhotovení Díla je : <span class="fillable">{{misto_zhotoveni}}</span></p>
+        
+        <p class="paragraph">6. Nebude-li Zhotovitel schopen splnit termíny stanovené v této Smlouvě v důsledku vyšší moci, prodlužuje se termín o dobu, po kterou účinky vyšší moci trvají.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">IV.</div>
+        <div class="article-title">Způsob provádění díla</div>
+        
+        <p class="paragraph">1. Zhotovitel je povinen provést dílo v souladu s touto smlouvou a veškerými platnými zákony a jejich prováděcími vyhláškami, bezpečnostními předpisy, které se týkají jeho činnosti spojené s realizací díla a s dodržením specifických požadavků na bezpečnost osob.</p>
+        
+        <p class="paragraph">2. Zhotovitel je povinen při realizaci díla udržovat pořádek a čistotu a je povinen průběžně odstraňovat odpady a nečistoty vzniklé jeho pracemi v souladu s platnými zákony. Pokud tyto povinnosti Zhotovitel plnit nebude, nese riziko vzniku případných škod.</p>
+        
+        <p class="paragraph">3. Zhotovitel je povinen Dílo provádět tak, aby nevznikly žádné škody na sousedních pozemcích a po ukončení prací provést úklid staveniště, vyjma odvozu odpadu, není-li ve specifikaci díla domluveno jinak. Náklady na vybudování, udržování a odklizení zařízení staveniště jsou zahrnuty v ceně Díla, vyjma dodávek energií potřebných pro zhotovení Díla.</p>
+        
+        <p class="paragraph">4. Objednatel se zavazuje poskytnout Zhotoviteli veškerou možnou součinnost při provádění Díla, včetně zajištění přístupu k odběrným místům elektrické energie a vody v rozsahu nezbytném pro řádné zhotovení Díla, jsou-li tyto pro realizaci Díla potřebné. Náklady na spotřebu těchto energií nese Objednatel</p>
+        
+        <p class="paragraph">5. Smluvní strany se dohodly, že Zhotovitel je Oprávněn na místo provádění Díla dovézt materiál před zahájením prací a složit jej na místo určené Objednatelem. Objednatel se zavazuje zajistit vhodné místo pro uskladnění materiálu. Od složení materiálu v místě provádění Díla nese odpovědnost za tento materiál Objednatel.</p>
+        
+        <p class="paragraph">6. Smluvní strany se dohodly, že vlastníkem Díla je Zhotovitel až do úplného zaplacení ceny Díla.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">V.</div>
+        <div class="article-title">Předání a převzetí díla</div>
+        
+        <p class="paragraph">1. Zhotovitel splní svou povinnost provést dílo jeho řádným dokončením a předáním objednateli v dohodnutém termínu a místě, bez vad a nedodělků, které by bránily užívání Díla.</p>
+        
+        <p class="paragraph">2. K převzetí dokončeného díla dojde po jeho realizaci, případně v nejbližším možném termínu.</p>
+        
+        <p class="paragraph">3. Smluvní strany se dohodly, že Dílo bude předáno Objednateli ve sjednaném termínu. Předání díla bude zaznamenáno v předávacím protokolu, avšak písemný předávací protokol není podmínkou pro vznik nároku na cenu díla. V předávacím protokolu bude zaznamenán stav Díla a případné vady a nedodělky nebránící užívání díla.</p>
+        
+        <p class="paragraph">4. Pokud Objednatel odmítne podepsat předávací protokol, je povinen do 3 pracovních dní písemně uvést konkrétní důvody svého odmítnutí. V případě oprávněných důvodů se Zhotovitel zavazuje odstranit všechny oprávněné vady a nedodělky uvedené Objednatelem a následně předložit znovu k podpisu předávací protokol. V případě neoprávněných důvodů bude Zhotovitel informovat o rozhodnutí objednatele a předání díla se považuje za uskutečněné dnem odmítnutí podepsání předávacího protokolu.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">VI.</div>
+        <div class="article-title">Odpovědnost za vady</div>
+        
+        <p class="paragraph">1. Zhotovitel poskytne na Dílo záruku po dobu 24 měsíců od provedení Díla objednateli. Záruční doba některých komponentů Díla může být delší v závislosti na záruce poskytované výrobcem. Záruka se vztahuje na vady, které se vyskytnou v této době, pokud nebyly způsobeny nesprávným užíváním nebo údržbou ze strany objednatele.</p>
+        
+        <p class="paragraph">2. Objednatel je povinen případné vady reklamovat u Zhotovitele bez zbytečného odkladu po jejich zjištění. V reklamaci musí být vady popsány a musí být uvedeno, jak se projevují. Dále v reklamaci objednatel musí uvést své požadavky na způsob odstranění vad.</p>
+        
+        <p class="paragraph">3. Zhotovitel je povinen rozhodnout o reklamaci bez zbytečného odkladu. Zhotovitel je dále povinen zjištěné záruční vady nejpozději do 30 dnů, pokud se smluvní strany nedohodnou jinak.</p>
+        
+        <p class="paragraph">4. Zhotovitel neodpovídá za vady díla, které byly způsobeny použitím podkladů a věcí poskytnutých objednatelem, a Zhotovitel ani při vynaložení veškeré péče nemohl zjistit jejich nevhodnost, nebo na ni upozornil objednatele a ten na jejich použití trval.</p>
+        
+        <p class="paragraph">5. Smluvní strany se dohodly, že v případě vady díla má objednatel během záruční doby právo požadovat a Zhotovitel povinnost bezplatně vady odstranit. V případě, že se ukáže, že se nejedná o závadu v rámci záruky, budou vyúčtovány náklady spojené s vykonaným výjezdem.</p>
+        
+        <p class="paragraph">6. Bližší informace jsou uvedeny ve Všeobecných obchodních podmínkách Zhotovitele, které jsou nedílnou součástí smlouvy.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">VII.</div>
+        <div class="article-title">Odstoupení od smlouvy</div>
+        
+        <p class="paragraph">1. Zhotovitel je oprávněn odstoupit od této Smlouvy v případě, že je Objednatel v prodlení se zaplacením jakékoliv části díla více než 15 dní.</p>
+        
+        <p class="paragraph">2. Zhotovitel je oprávněn od smlouvy odstoupit, pokud v průběhu provádění díla zjistí, že informace poskytnuté Objednatelem jsou nepravdivé, zejména že místo provedení díla není způsobilé k jeho provedení (stav střechy znemožňuje instalaci a provoz díla a další).</p>
+        
+        <p class="paragraph">3. Objednatel je oprávněn odstoupit od Smlouvy, pokud byla uzavřena mimo prostor obvyklý k podnikání Zhotovitele, do 14 dnů od uzavření Smlouvy.</p>
+        
+        <p class="paragraph">4. Bližší podmínky odstoupení od smlouvy jsou uvedeny ve Všeobecných obchodních podmínkách, které jsou nedílnou součástí smlouvy.</p>
+    </div>
+
+    <div class="article">
+        <div class="article-number">VIII.</div>
+        <div class="article-title">Závěrečná ustanovení</div>
+        
+        <p class="paragraph">1. Tato Smlouva nabývá platnosti a účinnosti dnem jejího podpisu oběma Smluvními stranami.</p>
+        
+        <p class="paragraph">2. Tato Smlouva a vztahy v ní vyplývající se řídí právním řádem České republiky, zejména příslušnými ustanoveními zák. č. 89/2012 Sb., občanský zákoník, ve znění pozdějších předpisů.</p>
+        
+        <p class="paragraph">3. Smlouva byla vyhotovena ve dvou stejnopisech, z nichž každá Smluvní strana obdrží po jednom vyhotovení.</p>
+        
+        <p class="paragraph">4. Měnit nebo doplňovat obsah této smlouvy je možné formou písemných dodatků, které budou platné, pokud budou řádně potvrzeny a podepsány oprávněnými zástupci obou smluvních stran.</p>
+        
+        <p class="paragraph">5. Ve výjimečných případech je možné měnit ujednání této smlouvy také prostřednictvím emailového odsouhlasení oběma smluvními stranami, přičemž takové odsouhlasení musí být jednoznačně identifikovatelné a dokumentovatelné. Souhlas s vícepracemi a dodatečným materiálem dle čl. II. odst. 6 této smlouvy může být kromě písemné formy udělen také jakýmkoliv jiným prokazatelným způsobem, zejména emailem nebo podpisem na dokumentu předloženém pracovníkem Zhotovitele.</p>
+        
+        <p class="paragraph">6. Objednatel podpisem Smlouvy výslovně prohlašuje, že se již před podpisem této Smlouvy seznámil s Všeobecnými obchodními podmínkami Zhotovitele.</p>
+        
+        <p class="paragraph">7. Smluvní strany níže svým podpisem stvrzují, že si Smlouvu před jejím podpisem přečetly, s jejím obsahem souhlasí, a tato je sepsána podle jejich pravé, skutečné a svobodné vůle, srozumitelně a určitě, nikoli v tísni a za nápadně nevýhodných podmínek.</p>
+    </div>
+
+    <div class="appendix-list">
+        Přílohy:<br>
+        <div style="margin-left: 40px;">
+            č. 1 – Bližší specifikace díla<br>
+            č. 2 - Všeobecné obchodní podmínky
+        </div>
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            V <span class="fillable">{{misto_podpisu_objednatel}}</span> dne <span class="fillable">{{datum_podpisu_objednatel}}</span>
+            <div class="signature-line">
+                Objednatel
+            </div>
+        </div>
+        
+        <div class="signature-block">
+            V <span class="fillable">{{misto_podpisu_zhotovitel}}</span> dne <span class="fillable">{{datum_podpisu_zhotovitel}}</span>
+            <div class="signature-line" style="text-align: center;">
+                <strong>T.C.S. Group s.r.o.</strong><br>
+                IČ 29382106<br>
+                Ostravská 438, Petřvald 735 41<br>
+                <br>
+                Zhotovitel
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
