@@ -331,11 +331,6 @@
         <div class="signature-block">
             V <span class="fillable">{{misto_podpisu_zhotovitel}}</span> dne <span class="fillable">{{datum_podpisu_zhotovitel}}</span>
             <div class="signature-line" style="text-align: center;">
-                <strong>T.C.S. Group s.r.o.</strong><br>
-                IČ 29382106<br>
-                Ostravská 438, Petřvald 735 41<br>
-                <br>
-                Zhotovitel
             </div>
         </div>
     </div>
